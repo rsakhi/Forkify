@@ -1,3 +1,5 @@
-import x from './test';
-console.log(x)
-console.log("hi77   ");
+import str from './models/Search'
+import {add} from './views/searchView'
+
+console.log(str);
+console.log(add(2,3));
