@@ -1,5 +1,6 @@
-import str from './models/Search'
 import {add} from './views/searchView'
+import Search from './models/Search'
 
-console.log(str);
+const search = new Search("pizza");
+search.getSearchResult();
 console.log(add(2,3));
