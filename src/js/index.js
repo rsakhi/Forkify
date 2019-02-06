@@ -24,7 +24,7 @@ const controleSearch = async () => {
     console.log(state.search.results);
 }
 
-document.querySelector('.search__btn').addEventListener('click', e => {
+document.querySelector('.search').addEventListener('submit', e => {
     e.preventDefault();
     console.log("fro");
     controleSearch();
