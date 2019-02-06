@@ -1,8 +1,14 @@
 //export const add = (a,b) => a+b;
-import {elements} from './base'
+import {elements} from './base';
 
 export const getInput = () => elements.searchInput.value;
+export const clearInput = () => {
+    elements.searchInput.value = "";
+};
 
+export const clearResults = () => {
+    elements.searchResultList.innerHTML = "";
+};
 const renderRecipes = recipe => {
     const markup = `
             <li>

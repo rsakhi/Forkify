@@ -19,10 +19,14 @@ const controleSearch = async () => {
 
     //2) create new Search Object
     state.search = new Search(quary);
+
     // ) prepare UI for search result
+    searchView.clearInput();
+    searchView.clearResults();
 
     //3) make API call
     await state.search.getSearchResult();
+    
     //4) display result
     searchView.renderResults(state.search.results);
     console.log(state.search.results);
