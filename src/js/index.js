@@ -1,15 +1,17 @@
 // import {add} from './views/searchView'
 // console.log(add(2,3));
 
+
 import Search from './models/Search';
 import * as searchView from './views/searchView'
 import {elements} from "./views/base";
-
+import Recipe from './models/Recipes';
+ 
 // const search = new Search("pizza");
 // search.getSearchResult();
 
 const state = {};
-
+// Search Contoller 
 const controleSearch = async () => {
 
     //1) read input from UI
@@ -36,3 +38,25 @@ elements.searchForm.addEventListener('submit', e => {
     e.preventDefault();
     controleSearch();
 })
+
+
+// Recipe Controller
+
+const controleRecipe = async () => {
+
+    // 1) get Id from URL
+    const id = window.location.hash.replace('#', '');
+    if(id){
+        // ) Clear rcipe
+
+        //2) get recipe
+        state.recipe = new Recipe(id);
+        await state.recipe.getRecipe();
+        
+        // 3) Display Recipe
+
+    }
+    
+}
+
+windows.addEventListener('hashchange', controleRecipe)
