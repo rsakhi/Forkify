@@ -22,4 +22,13 @@ export default class Recipe {
         }
     }
 
+    calcTime() {
+        const numing = this.ingredients.length;
+        const periods = Math.ceil(numing/3);
+        this.time = periods * 15;
+    }
+    
+    calcServings() {
+        this.servings = 4;
+    }
 } 
